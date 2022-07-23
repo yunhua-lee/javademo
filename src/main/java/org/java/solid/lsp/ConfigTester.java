@@ -14,19 +14,22 @@ public class ConfigTester {
 	String comment = "config your pool name";
 
 	@Test
-	public void test(){
-		IConfig config = new XmlConfig();
+	public void testJsonConfig(){
+		JsonConfig config = new JsonConfig();
 		config.set(key, value, comment);
 
-		Assert.assertEquals(value, config.getValue(key));
-		Assert.assertEquals(comment, config.getComment(key));
+		Assert.assertEquals(value, config.get(key));
+		Assert.assertNull(config.getComment(key));
 
-		config = new JsonConfig();
+		//换成Json5Config
+		config = new Json5Config();
 		config.set(key, value, comment);
 
-		//这里测试会失败，因为JsonConfig违背了LSP原则
-		Assert.assertEquals(value, config.getValue(key));
-		Assert.assertEquals(comment, config.getComment(key));
+		Assert.assertEquals(value, config.get(key));
+
+		//这里会测试会失败，因为Json5Config违背了LSP原则
+		//请思考：如何避免违背LSP，又能够重用代码？
+		Assert.assertEquals(comment, null);
 	}
 
 

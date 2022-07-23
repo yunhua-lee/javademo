@@ -7,6 +7,6 @@ package org.java.solid.ocp;
  */
 public interface IConfig {
 	void set(String key, String value, String comment);
-	String getValue(String key);
+	String get(String key);
 	String getComment(String key);
 }

@@ -1,4 +1,4 @@
-package org.java.solid.lsp;
+package org.java.solid.dip;
 
 /**
  * @Desctiption

@@ -1,22 +1,21 @@
-package org.java.solid.lsp;
+package org.java.solid.dip;
 
 /**
  * @Desctiption
  * @Author wallace
- * @Date 2022/7/21
+ * @Date 2022/7/23
  */
-public class XmlConfig implements IConfig {
+public class JsonConfig implements IConfig{
 	public void set(String key, String value, String comment) {
 		//省略具体实现
 	}
 
-	public String get(String key) {
+	public String get(String key){
 		//省略具体实现
-		return null;
+		return "";
 	}
 
 	public String getComment(String key) {
-		//省略具体实现
-		return "";
+		return null;
 	}
 }

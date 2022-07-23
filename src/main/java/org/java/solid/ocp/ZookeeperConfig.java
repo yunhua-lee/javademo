@@ -10,7 +10,7 @@ public class ZookeeperConfig implements IConfig{
 		//省略具体实现
 	}
 
-	public String getValue(String key) {
+	public String get(String key) {
 		//省略具体实现
 		return null;
 	}
